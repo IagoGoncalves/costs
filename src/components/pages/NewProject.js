@@ -7,11 +7,10 @@ function NewProject() {
     const history = useNavigate();
 
     function createPost(project) {
-        // initialize cost and services
         project.cost = 0;
         project.services = [];
 
-        fetch("http://localhost:5000/projects", {
+        fetch("http://localhost:3001/projects", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -20,8 +19,6 @@ function NewProject() {
         })
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data);
-                //redirect
                 history("/projects", {
                     state: {
                         message: "Projeto criado com sucesso!",

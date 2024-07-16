@@ -17,7 +17,7 @@ function Project() {
 
     useEffect(() => {
         setTimeout(() => {
-            fetch(`http://localhost:5000/projects/${id}`, {
+            fetch(`http://localhost:3001/projects/${id}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -39,7 +39,7 @@ function Project() {
             setType("error");
             return false;
         }
-        fetch(`http://localhost:5000/projects/${project.id}`, {
+        fetch(`http://localhost:3001/projects/${project.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
